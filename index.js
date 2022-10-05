@@ -1,8 +1,13 @@
-// ex 4
-
 const readLine = require('readline-sync');
 var userName = ''
 var score = 0;
+const topScorers = [{
+  name: 'Ronit',
+  score: 5
+}, {
+  name: 'Shraddha',
+  score: 6
+}]
 // Array of question set
 let questionData = [{
   question: "what is my favorite cuisine? ",
@@ -14,8 +19,14 @@ let questionData = [{
   question: "Who is my favourite Rapper? ",
   answer: "raftaar"
 }, {
-  question: "where do I work? ",
+  question: "In which company do I work? ",
   answer: "kizora"
+}, {
+  question: "My favorite indoor game is? ",
+  answer: "chess"
+}, {
+  question: "My favorite outdoor game is? ",
+  answer: "football"
 }, {
   question: "Do I have a Pet? ",
   answer: "no"
@@ -60,6 +71,7 @@ function restartOption() {
   else {
     console.clear();
     console.log(`Thanks for playing ${userName}.`)
+    showHighScores()
     resetScore()
   }
 }
@@ -98,3 +110,9 @@ function resetScore() {
   score = 0;
 }
 
+function showHighScores() {
+  console.log(`Here are the stats of highest scores:`)
+  for (let i = 0; i < topScorers.length; i++) {
+    console.log(`Name ${topScorers[i].name} and score is ${topScorers[i].score}`)
+  }
+}
