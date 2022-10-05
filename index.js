@@ -113,6 +113,6 @@ function resetScore() {
 function showHighScores() {
   console.log(`Here are the stats of highest scores:`)
   for (let i = 0; i < topScorers.length; i++) {
-    console.log(`Name ${topScorers[i].name} and score is ${topScorers[i].score}`)
+    console.log(`Name is ${topScorers[i].name} and score is ${topScorers[i].score}`)
   }
 }
